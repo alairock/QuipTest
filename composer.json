@@ -1,0 +1,19 @@
+{
+	"name": "alairock/quip-test",
+	"description": "An Implementation of the multi-armed bandit test. (See: http://stevehanov.ca/blog/index.php?id=132)",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "alairock",
+			"email": "skyler@sixteenink.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Quip\\": "src/"
+		}
+	},
+	"require": {
+		"predis/predis": "0.8.7"
+	}
+}
