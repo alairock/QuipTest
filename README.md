@@ -41,7 +41,7 @@ Be sure to include your composer autoload file, if you are not already, or your 
 <?php
 	$testName = "button"; 
 	$tags = ['orange', 'green', 'white']; // test tags
-	$buttonTest = new Quip\Test($testName, $tags);
+	$buttonTest = new \Quip\Test($testName, $tags);
 ```
 
 #### Get tag
