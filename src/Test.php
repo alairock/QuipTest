@@ -18,11 +18,12 @@ class Test {
 	public function __construct($prefix, array $datapool) {
 		$this->setPrefix($prefix);
 		$this->setDataPool($datapool);
-		$this->redis = new \Predis\Client();
+		$this->redis = new \Redis();
+		$this->redis->connect('127.0.0.1');
 	}
 
 	public function flushAll() {
-		$this->redis->flushall();
+		$this->redis->flushAll();
 		exit;
 	}
 
@@ -94,17 +95,17 @@ class Test {
 
 	public function getTestVar() {
 		if (mt_rand(1,10) == 1 || ($this->redis->get($this->prefix . ':total') < 20)) {
-		$case = $this->dataPool[array_rand($this->dataPool)];
+			$case = $this->dataPool[array_rand($this->dataPool)];
 		} else {
 			$cases = $this->_calculateStats();
 			$case = array_keys($cases, max($cases))[0];
 		}
 		$this->case = $case;
-		$this->incrementTotalAndTest($case);
+		$this->_incrementTotalAndTest($case);
 		return $case;
 	}
 
-	protected function incrementTotalAndTest($case) {
+	protected function _incrementTotalAndTest($case) {
 		$this->redis->incr($this->prefix . ":" . $case . ':tests');
 		$this->redis->incr($this->prefix . ":" . 'total');
 	}
