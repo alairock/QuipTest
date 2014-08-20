@@ -1,6 +1,9 @@
 # QuipTest
 
-The multi armed bandit as a PHP Component [(See this article for background)](http://stevehanov.ca/blog/index.php?id=132)
+The multi armed bandit as a PHP Component
+<a href="http://stevehanov.ca/blog/index.php?id=132" target="_blank">(See this article for background)</a>
+
+
 
 **Better** testing than A/B testing!
 
@@ -22,15 +25,16 @@ $ composer require "alairock/quip-test":"dev-master"
 ```
 
 #### Other Requirements
-- Redis Server ([Installation](http://redis.io/topics/quickstart))
-- PHPRedis PHP Extension ([Installation](https://github.com/nicolasff/phpredis#installingconfiguring))
+- Redis Server (<a href="http://redis.io/topics/quickstart" target="_blank">Installation</a>)
+- PHPRedis PHP Extension (<a href="https://github.com/nicolasff/phpredis#installingconfiguring" target="_blank">Installation</a>)
+
 
 ## Documentation
 
-For a basic example of a working test, see the [index](https://github.com/alairock/QuipTest/blob/master/index.php).
+For a basic example of a working test, see the <a href="https://github.com/alairock/QuipTest/blob/master/index.php" target="_blank">index</a>.
 
 #### Autoload
-Be sure to include your composer autoload file, if you are not already, or your framework is not supporting it. Ideally you would put the autoload file in a place that cascades into all areas of your application that will require a component. ([Composer](https://getcomposer.org/doc/01-basic-usage.md))
+Be sure to include your composer autoload file, if you are not already, or your framework is not supporting it. Ideally you would put the autoload file in a place that cascades into all areas of your application that will require a component. (<a href="https://getcomposer.org/doc/01-basic-usage.md" target="_blank">Composer</a>)
 
 #### Initation the test.
 ```
