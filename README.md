@@ -86,3 +86,12 @@ Example output:
 ```
 	$buttonTest->flushAll();
 ``` 
+
+
+# Warning!!!
+Chrome has a funny little bug, where if you do not reference your favicon directly, it pulls the page twice, which will lead to a potential double incrementation (failure!) on your test! If you have issues, add the favicon to your header in the html:
+```
+	<link rel="icon"
+	type="image/png"
+	href="http://example.com/myicon.png">
+```
