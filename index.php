@@ -12,31 +12,18 @@
 
 	<?php
 	require 'vendor/autoload.php';
-	$prefix = "Friend";
-	$pets = ['dog', 'cat', 'bird'];
-	$quip = new Quip\Test($prefix, $pets);
+	$testName = "button";
+	$tags = ['orange', 'green', 'white']; // test tags
+	$buttonTest = new \Quip\Test($testName, $tags);
 
-	if (!empty($_POST['winner'])) {
-		$quip->setSuccess($_POST['winner']);
+	if (!empty($_POST['tag_name'])) {
+		$buttonTest->markSuccess($_POST['tag_name']);
 	}
 	?>
 
 	<form name="quiptest" action="/" method="post">
-		Current Winner: <input type="text" name="winner" value="<?php echo $quip->getTestVar(); ?>">
+		Current Winner: <input type="text" name="tag_name" value="<?php echo $buttonTest->getTag(); ?>">
 		<input type="submit" value="Vote">
 	</form>
-	<br><br><br><br>
-
-	<?php
-		pr($quip->getStats());
-	?>
-
-	<?php
-	function pr($val) {
-		echo "<pre>";
-		print_r($val);
-		echo "</pre>";
-	}
-	?>
 	</body>
 </html>

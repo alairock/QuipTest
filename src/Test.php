@@ -85,7 +85,7 @@ class Test {
 		return;
 	}
 
-	public function setSuccess($successVar) {
+	public function markSuccess($successVar) {
 		if (!in_array($successVar, $this->dataPool)) {
 			return false;
 		}
@@ -93,7 +93,7 @@ class Test {
 		return true;
 	}
 
-	public function getTestVar() {
+	public function getTag() {
 		if (mt_rand(1,10) == 1 || ($this->redis->get($this->prefix . ':total') < 20)) {
 			$case = $this->dataPool[array_rand($this->dataPool)];
 		} else {
