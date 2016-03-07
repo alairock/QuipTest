@@ -41,7 +41,7 @@ class Test {
 	 * @param $prefix
 	 * @param array $tags
 	 */
-	public function __construct($uri = 'tcp://127.0.0.1:6379', $prefix = null, array $tags = [], ) {
+	public function __construct($uri = 'tcp://127.0.0.1:6379', $prefix = null, array $tags = []) {
 		$this->redis = new \Predis\Client($uri);
 		if (!is_null($prefix)) {
 			$this->setPrefix($prefix);

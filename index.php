@@ -1,7 +1,7 @@
 <?php require 'vendor/autoload.php';
 $testName = "button";
 $tags = ['orange', 'green', 'white']; // test tags
-$buttonTest = new \Quip\Test($testName, $tags, 'tcp://192.168.99.100:6379');
+$buttonTest = new \Quip\Test('tcp://192.168.99.100:6379', $testName, $tags);
 $tag = $buttonTest->getTag();
 if (!empty($_GET['tag_name'])) {
 	$buttonTest->markSuccess($_GET['tag_name']);
