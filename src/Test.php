@@ -41,10 +41,19 @@ class Test {
 	 * @param $prefix
 	 * @param array $tags
 	 */
-	public function __construct($prefix, array $tags, $uri = 'tcp://127.0.0.1:6379') {
-		$this->setPrefix($prefix);
-		$this->setDataPool($tags);
+	public function __construct($uri = 'tcp://127.0.0.1:6379', $prefix = null, array $tags = [], ) {
 		$this->redis = new \Predis\Client($uri);
+		if (!is_null($prefix)) {
+			$this->setPrefix($prefix);
+		}
+		if (!empty($tags)) {
+			$this->setDataPool($tags);
+		}
+	}
+
+	public function getRedisClient()
+	{
+		return $this->redis;
 	}
 
 	/**
