@@ -24,10 +24,13 @@ QuipTest will let you plug in dynamic, evolving tests, to any part of your appli
 $ composer require "alairock/quip-test":"dev-master"
 ```
 
-#### Other Requirements
-- Redis Server (<a href="http://redis.io/topics/quickstart" target="_blank">Installation</a>)
-- PHPRedis PHP Extension (<a href="https://github.com/nicolasff/phpredis#installingconfiguring" target="_blank">Installation</a>)
+#### Redis Server (Required)
 
+ - Standalone <a href="http://redis.io/topics/quickstart" target="_blank">Installation</a>
+ 
+ - Redis Server with Docker:
+
+    `docker run -d --name redis-server -p 6379:6379 redis`
 
 ## Documentation
 
