@@ -6,13 +6,13 @@ namespace Quip;
 class Test {
 
 	/**
-	 *  The redis object
+	 *	The redis object
 	 * @var \Redis
 	 */
 	public $redis;
 
 	/**
-	 *  The prefix, or test name. This is the key for redis
+	 *	The prefix, or test name. This is the key for redis
 	 * @var $prefix
 	 */
 	protected $prefix;
@@ -39,13 +39,12 @@ class Test {
 	 * Setup our test. We need the "Test Name" and "Tags"
 	 * Know also as "Prefix" and "DataPool" respectively.
 	 * @param $prefix
-	 * @param array $datapool
+	 * @param array $tags
 	 */
-	public function __construct($prefix, array $datapool) {
+	public function __construct($prefix, array $tags, $uri = 'tcp://127.0.0.1:6379') {
 		$this->setPrefix($prefix);
-		$this->setDataPool($datapool);
-		$this->redis = new \Redis();
-		$this->redis->connect('127.0.0.1');
+		$this->setDataPool($tags);
+		$this->redis = new \Predis\Client($uri);
 	}
 
 	/**
@@ -86,7 +85,7 @@ class Test {
 			$numberOfTestsPerformed = $this->redis->get($this->prefix . ':total');
 			$this->stats['cases'][$case] = [
 				'tests_run_for_case' => $this->redis->get($beginningOfPath . ':tests'),
-				'success_rate' =>  $cases[$case],
+				'success_rate' =>	$cases[$case],
 			];
 			$this->stats['tests_performed'] = $numberOfTestsPerformed;
 		}
