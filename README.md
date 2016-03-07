@@ -26,7 +26,6 @@ $ composer require "alairock/quip-test":"dev-master"
 
 #### Other Requirements
 - Redis Server (<a href="http://redis.io/topics/quickstart" target="_blank">Installation</a>)
-- PHPRedis PHP Extension (<a href="https://github.com/nicolasff/phpredis#installingconfiguring" target="_blank">Installation</a>)
 
 
 ## Documentation
